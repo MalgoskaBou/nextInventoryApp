@@ -36,9 +36,9 @@ public class EditActivity extends AppCompatActivity implements
     private EditText supplierNameText;
     private EditText supplierPhoneText;
 
-    private Button decrease;
-    private Button increase;
-    private Button order;
+    private Button decreaseBtn;
+    private Button increaseBtn;
+    private Button callToSupplierBtn;
 
     private int checkSum = 0;
 
@@ -77,11 +77,11 @@ public class EditActivity extends AppCompatActivity implements
         quantityText = findViewById(R.id.quantityText);
         supplierNameText = findViewById(R.id.supplierNameText);
         supplierPhoneText = findViewById(R.id.supplierPhoneText);
-        increase = findViewById(R.id.increase);
-        decrease = findViewById(R.id.decrease);
-        order = findViewById(R.id.order);
+        increaseBtn = findViewById(R.id.increase);
+        decreaseBtn = findViewById(R.id.decrease);
+        callToSupplierBtn = findViewById(R.id.order);
 
-        order.setOnClickListener(new View.OnClickListener() {
+        callToSupplierBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String phone = supplierPhoneText.getText().toString().trim();
@@ -93,7 +93,7 @@ public class EditActivity extends AppCompatActivity implements
             }
         });
 
-        increase.setOnClickListener(new View.OnClickListener() {
+        increaseBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 int quantity = 0;
@@ -105,7 +105,7 @@ public class EditActivity extends AppCompatActivity implements
             }
         });
 
-        decrease.setOnClickListener(new View.OnClickListener() {
+        decreaseBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 int quantity = 0;

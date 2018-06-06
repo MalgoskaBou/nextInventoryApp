@@ -31,10 +31,10 @@ public class BookCursorAdapter extends CursorAdapter {
     @Override
     public void bindView(View view, final Context context, Cursor cursor) {
 
-        TextView nameTextView = view.findViewById(R.id.name);
+        TextView titleTextView = view.findViewById(R.id.name);
         TextView priceTextView = view.findViewById(R.id.price);
         TextView quantityTextView = view.findViewById(R.id.quantity);
-        Button saleButton = view.findViewById(R.id.sale);
+        Button saleBtn = view.findViewById(R.id.sale);
 
         int nameColumnIndex = cursor.getColumnIndex(BookEntry.COLUMN_TITLE);
         int priceColumnIndex = cursor.getColumnIndex(BookEntry.COLUMN_PRICE);
@@ -50,13 +50,13 @@ public class BookCursorAdapter extends CursorAdapter {
             bookQuantity = context.getString(R.string.default_quantity);
         }
 
-        nameTextView.setText(bookTitle);
+        titleTextView.setText(bookTitle);
         priceTextView.setText(bookPrice);
         quantityTextView.setText(bookQuantity);
         String currentId = cursor.getString(cursor.getColumnIndexOrThrow(BookEntry._ID));
         final Uri currentUri = ContentUris.withAppendedId(BookEntry.CONTENT_URI, Long.parseLong(currentId));
 
-        saleButton.setOnClickListener(new View.OnClickListener() {
+        saleBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -71,6 +71,5 @@ public class BookCursorAdapter extends CursorAdapter {
                     Toast.makeText(context, R.string.quantity_below_zero, Toast.LENGTH_SHORT).show();
             }
         });
-
     }
 }

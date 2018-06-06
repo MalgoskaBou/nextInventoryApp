@@ -25,8 +25,6 @@ public class MainActivity extends AppCompatActivity implements
         LoaderManager.LoaderCallbacks<Cursor> {
     private static final int BOOK_LOADER = 0;
     BookCursorAdapter cursorAdapter;
-    private TextView quantityTextV;
-    private ListView bookListV;
     private Uri currentBookUri;
 
     @Override
@@ -43,7 +41,7 @@ public class MainActivity extends AppCompatActivity implements
             }
         });
 
-        bookListV = findViewById(R.id.list);
+        ListView bookListV = findViewById(R.id.list);
 
         View emptyView = findViewById(R.id.empty_view);
         bookListV.setEmptyView(emptyView);
@@ -56,15 +54,12 @@ public class MainActivity extends AppCompatActivity implements
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
 
                 Intent intent = new Intent(MainActivity.this, EditActivity.class);
-
                 currentBookUri = ContentUris.withAppendedId(BookEntry.CONTENT_URI, id);
-
                 intent.setData(currentBookUri);
-
                 startActivity(intent);
             }
         });
-        quantityTextV = findViewById(R.id.quantity);
+        TextView quantityTextV = findViewById(R.id.quantity);
 
         getLoaderManager().initLoader(BOOK_LOADER, null, this);
     }
