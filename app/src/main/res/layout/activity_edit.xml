@@ -2,67 +2,94 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".EditActivity">
 
-    <EditText
-        android:id="@+id/supplierPhoneText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/supplier_phone"
-        android:inputType="phone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/supplierNameText" />
-
-    <EditText
-        android:id="@+id/quantityText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/quantity"
-        android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/supplierNameText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/priceText" />
-
-    <EditText
-        android:id="@+id/priceText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/price"
-        android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/quantityText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titleText" />
 
     <EditText
         android:id="@+id/titleText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
+        style="@style/EditorFieldStyle"
         android:hint="@string/title"
-        android:inputType="text"
+        android:inputType="textCapWords"
         app:layout_constraintBottom_toTopOf="@+id/priceText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/supplierNameText"
+        android:id="@+id/priceText"
+        style="@style/EditorFieldStyle"
+        android:hint="@string/price"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/quantityText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleText" />
+
+
+    <Button
+        android:id="@+id/decrease"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
+        android:layout_marginStart="@dimen/smallMargin"
+        android:text="@string/decrease_button"
+        app:layout_constraintEnd_toStartOf="@+id/quantityText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/quantityText" />
+
+    <EditText
+        android:id="@+id/quantityText"
+        style="@style/EditorFieldStyle"
+        android:gravity="center"
+        android:hint="@string/quantity"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/supplierNameText"
+        app:layout_constraintEnd_toStartOf="@+id/increase"
+        app:layout_constraintStart_toEndOf="@+id/decrease"
+        app:layout_constraintTop_toBottomOf="@+id/priceText" />
+
+    <Button
+        android:id="@+id/increase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/smallMargin"
+        android:text="@string/increase_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/quantityText"
+        app:layout_constraintTop_toTopOf="@+id/quantityText" />
+
+
+    <EditText
+        android:id="@+id/supplierNameText"
+        style="@style/EditorFieldStyle"
         android:hint="@string/supplier_name"
-        android:inputType="text"
+        android:inputType="textCapWords"
         app:layout_constraintBottom_toTopOf="@+id/supplierPhoneText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/quantityText" />
+
+    <EditText
+        android:id="@+id/supplierPhoneText"
+        style="@style/EditorFieldStyle"
+        android:hint="@string/supplier_phone"
+        android:inputType="phone"
+        app:layout_constraintBottom_toTopOf="@+id/order"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/supplierNameText" />
+
+    <Button
+        android:id="@+id/order"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/smallMargin"
+        android:layout_marginStart="@dimen/smallMargin"
+        android:text="@string/call_to_supplier"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/supplierPhoneText" />
 </android.support.constraint.ConstraintLayout>

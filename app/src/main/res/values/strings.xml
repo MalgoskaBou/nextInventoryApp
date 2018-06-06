@@ -1,14 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+
 <resources>
-    <string name="app_name">nextInventoryApp</string>
-    <string name="delete_all">delete all</string>
-    <string name="save_item">save</string>
-    <string name="delete_item">delete item</string>
-    <string name="supplier_phone">Supplier phone</string>
-    <string name="quantity">Quantity</string>
-    <string name="price">Price</string>
+    <string name="app_name">InventoryApp</string>
+
+    <!--actions-->
+    <string name="insert_dummy_data">Insert Example Data</string>
+    <string name="delete_all_entries">Delete All books</string>
+    <string name="keep_editing">Keep editing</string>
+    <string name="delete_dialog_msg">Do you want delete?</string>
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
+    <string name="call_to_supplier">Call to supplier</string>
+    <string name="sale">Sale</string>
+    <string name="save">Save</string>
+    <string name="discard">Discard</string>
+    <string name="decrease_button">-</string>
+    <string name="increase_button">+</string>
+    <string name="default_quantity">0</string>
+
+    <!--empty view-->
+    <string name="empty_view_title_text">It\'s a bit empty here…</string>
+    <string name="empty_view_subtitle_text">Get started by adding a book</string>
+
+    <!--activity commands-->
+    <string name="editor_activity_new_book">Add a book</string>
+    <string name="editor_insert_book_success">Book saved</string>
+    <string name="editor_insert_book_failed">Error with saving book</string>
+    <string name="editor_activity_title_edit_book">Edit book</string>
+    <string name="editor_update_book_failed">Update book</string>
+    <string name="editor_update_book_successful">update successful.</string>
+    <string name="editor_delete_book_failed">Deleting failed</string>
+    <string name="editor_delete_book_successful">Deleting successful</string>
+    <string name="quantity_below_zero">Quantity cannot be below 0</string>
+
+    <!--error communicates-->
+    <string name="error_update">Error in updating</string>
+    <string name="quantity_error">You must insert quantity</string>
+    <string name="title_error">You must put product name!</string>
+    <string name="price_error">Book has to have price</string>
+    <string name="supplier_name_error">Supplier name can\'t be empty</string>
+    <string name="supplier_phone_error">You must put supplier number!</string>
+
+    <!--dialogs-->
+    <string name="unsaved_changes_dialog_msg">There is unsaved changes. Are you sure you want to quit?</string>
+
+    <!--labels-->
     <string name="title">Title</string>
     <string name="supplier_name">Supplier name</string>
-    <string name="insert_data">insert data</string>
-    <string name="database_message">The books table contains %1$s books.</string>
+    <string name="label_supplier">Supplier</string>
+    <string name="quantity">Quantity</string>
+    <string name="price">Price</string>
+    <string name="supplier_phone">Supplier phone number</string>
+    <string name="example_text">editText</string>
 
 </resources>
